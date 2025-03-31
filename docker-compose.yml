@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./flask-app  # Chemin vers le dossier de l'application Flask
+    ports:
+      - "5000:5000"
+    networks:
+      - mynetwork
+
+  ai-service:
+    build:
+      context: ./ai-service  # Chemin vers le dossier du service AI
+    networks:
+      - mynetwork
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db_data:
