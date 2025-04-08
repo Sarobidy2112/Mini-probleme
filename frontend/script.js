@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
         const stats = data.stats;
 
-        // Filtrer les colonnes avec des valeurs nulles ou N/A
+        
         const validColumns = stats.columns.filter(col => {
             return stats.mean_values[col] !== null && stats.mean_values[col] !== undefined;
         });
 
-        // Création du tableau pour afficher les statistiques
+        
         statisticsDiv.innerHTML = `
             <h3>Statistiques des Données</h3>
             <table class="stats-table">
@@ -49,11 +49,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             </table>
         `;
 
-        // Préparer les données pour le graphique
+        
         const labels = validColumns;
         const meanValues = labels.map(col => stats.mean_values[col]);
 
-        // Nettoyer le graphique précédent s’il existe
+        
         if (window.myChart) window.myChart.destroy();
 
         window.myChart = new Chart(ctx, {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-// Gestion du téléchargement du fichier CSV
+
 document.getElementById("download-csv").addEventListener("click", () => {
     window.location.href = "http://localhost:5001/download";
 });

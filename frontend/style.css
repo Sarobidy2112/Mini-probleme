@@ -83,13 +83,13 @@ button:hover {
     line-height: 1.5;
 }
 
-/* Style du tableau des statistiques */
+
 .stats-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #1e2a32; /* Fond sombre adapté */
-    color: #fff; /* Texte blanc */
+    background-color: #1e2a32; 
+    color: #fff; 
     font-family: Arial, sans-serif;
     border-radius: 8px;
     overflow: hidden;
@@ -98,23 +98,23 @@ button:hover {
 .stats-table th, .stats-table td {
     padding: 12px;
     text-align: center;
-    border: 1px solid #3a4b58; /* Bordure grise claire */
+    border: 1px solid #3a4b58; 
 }
 
 .stats-table th {
-    background-color: #30404d; /* Fond légèrement plus clair pour les en-têtes */
+    background-color: #30404d; 
 }
 
 .stats-table tr:nth-child(even) {
-    background-color: #2a3b46; /* Lignes paires plus sombres */
+    background-color: #2a3b46; 
 }
 
 .stats-table tr:nth-child(odd) {
-    background-color: #1e2a32; /* Lignes impaires plus sombres */
+    background-color: #1e2a32; 
 }
 
 .stats-table tr:hover {
-    background-color: #2a3b46; /* Effet de survol plus clair */
+    background-color: #2a3b46; 
 }
 
 .stats-table td, .stats-table th {
